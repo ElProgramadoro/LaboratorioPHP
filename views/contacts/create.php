@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-            <form action="<?php echo "index.php?c=".seg::codificar("contacts")."&m=".seg::codificar("mostrar").""?>" method="post">
+            <form method="post">
                 <div class="mb-3">
                     <label for="exampleInputText1" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp" name="txtNombre_Contacto">
@@ -22,6 +22,9 @@
                 <input type="hidden" value="<?php echo seg::getToken()?>" name="token">
                 <button type="submit" class="btn btn-success">enviar</button>
                 <button type="reset" class="btn btn-danger">borrar datos</button>
+                <?php if($_POST){
+                    #header("location: index.php?c=" . seg::codificar("contacts") . "&m=" . seg::codificar("mostrar").var_dump($_POST));
+                $obj=new seg(); $h=$obj->comentarioss(); }?>
             </form>
         </div>
     </div>

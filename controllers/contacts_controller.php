@@ -15,6 +15,7 @@ class contacts_controller
         #var_dump($_POST);
         #echo "metodo mostrar";
         if ($_POST) {
+                   
             if (!isset($_POST["token"])||!seg::validaSession($_POST["token"])){
                 echo "Acceso restringido";
                 exit();
